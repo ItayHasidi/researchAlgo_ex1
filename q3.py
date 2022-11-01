@@ -1,4 +1,5 @@
 from pydoc import locate
+
 list_type = locate("list")
 tuple_type = locate("tuple")
 set_type = locate("set")
@@ -21,8 +22,7 @@ def rec_sort(data):
                 item = str(item)
             new_data.append(item)
         new_data.sort()
-        data = (new_data)
-        # data.sort()
+        data = new_data
 
     elif type(data) == tuple_type or type(data) == set_type or type(data) == dict_type:
         if type(data) == tuple_type or type(data) == set_type:
@@ -38,7 +38,6 @@ def rec_sort(data):
                 data = tuple(new_data)
             else:
                 data = list(new_data)
-            # data = str(new_data)
 
         else:
             new_lst: dict = {}
@@ -49,8 +48,6 @@ def rec_sort(data):
                 item_val = data[item_key]
                 item_key = str(item_key)
                 new_lst[item_key] = item_val
-            # print(new_lst)
-            # data = dict(new_lst)
             data = dict(sorted(new_lst.items()))
 
     return data
@@ -78,6 +75,4 @@ def print_sorted(lst):
 
 if __name__ == '__main__':
     x = {"a": 5, "c": 6, "b": [1, 3, 2, 4]}
-    print_sorted(x)  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
-    x = {"a": 5, 1: 6, "b": [1, 3, 2, 4], 0: "a", "2": {"b", "c", 1, 0, -1, "A"}}
-    print_sorted(x)  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
+    print_sorted(x)

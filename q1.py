@@ -1,7 +1,5 @@
 import inspect
 from pyclbr import Function
-from pydoc import locate
-from inspect import ArgSpec
 
 
 def f(x: int, y: float, z):
