@@ -1,0 +1,5 @@
+solution:
+https://www.codingame.com/training/easy/ascii-art/solution?id=27030592
+
+question:
+https://www.codingame.com/ide/puzzle/ascii-art
