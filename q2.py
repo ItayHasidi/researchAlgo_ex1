@@ -7,6 +7,14 @@ def four_neighbor_function(node: Any) -> list:
 
 
 def breadth_first_search(start, end, neighbor_function):
+    """
+    BFS algorithm that searches for the best way from start node to end node, returns the path.
+
+    >>> breadth_first_search((0, 0), (0, 5),four_neighbor_function)
+    [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+
+    
+    """
     if start == end:
         return 0
     p = []
