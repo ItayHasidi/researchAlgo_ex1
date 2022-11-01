@@ -8,7 +8,7 @@ def f(x: int, y: float, z):
     return x + y + z
 
 
-def safe_call(f: Function, **kwargs):
+def safe_call(f: Function, *args, **kwargs):
     """
     This function gets a function and arguments, checks whether all the arguments are of the right type and prints
     the values if they are.
@@ -19,10 +19,11 @@ def safe_call(f: Function, **kwargs):
             s = lst.get(arg)
             if s != type(val):
                 raise Exception("value types mismatch")
-    print(f(**kwargs))
+    print(f(*args, **kwargs))
 
 
 if __name__ == '__main__':
     safe_call(f, x=5, y=7.0, z=3)
+    safe_call(f, 5, 7.0, 3)
     safe_call(f, x=5, y="abc", z=3)
 

@@ -55,38 +55,11 @@ def rec_sort(data):
 
 
 def print_sorted(lst):
-
-    types_sort = {list_type, tuple_type}
-    if type(lst) not in types:
-        print(lst)
-    else:
-        # new_lst: dict = {}
-        # new_lst.clear()
-        # print(new_lst, lst)
-
-        # for item_key in lst:
-        #     item_val = lst[item_key]
-        #     # lst.pop(item_key)
-        #     item_key = str(item_key)
-        #     new_lst[item_key] = item_val
-        # print(new_lst, lst)
-        # lst = new_lst
-        for item in lst:
-            item = str(item)
-            if type(lst[item]) in types_sort:
-                lst[item].sort()
-            elif type(lst[item]) == dict_type:
-                lst[item] = sorted(lst[item].items())
-                # print(sorted(lst[item].items()))
-            # else:
-            #     lst[item] = str(lst[item])
-            #     print(type(lst[item]), lst[item])
-        lst = sorted(lst.items())
-        print(lst)
+    print(rec_sort(lst))
 
 
 if __name__ == '__main__':
     x = {"a": 5, "c": 6, "b": [1, 3, 2, 4]}
-    # print_sorted(x)  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
+    print_sorted(x)  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
     x = {"a": 5, 1: 6, "b": [1, 3, 2, 4], 0: "a", "2": {"b", "c", 1, 0, -1, "A"}}
-    print(rec_sort(x))  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
+    print_sorted(x)  # prints e.g. {"a":5, "b":[1,2,3,4], "c":6}
